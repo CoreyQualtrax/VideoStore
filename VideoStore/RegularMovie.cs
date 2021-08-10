@@ -1,15 +1,11 @@
 ﻿namespace VideoStore
 {
-    public class Movie
+    public class RegularMovie : IMovie
     {
-        public const int CHILDRENS = 2;
-        public const int REGULAR = 0;
-        public const int NEW_RELEASE = 1;
-
         private string title;
         private int priceCode;
 
-        public Movie(string title, int priceCode)
+        public RegularMovie(string title, int priceCode)
         {
             this.title = title;
             this.priceCode = priceCode;
@@ -20,15 +16,14 @@
             return priceCode;
         }
 
-        public void SetPriceCode(int code)
-        {
-            priceCode = code;
-        }
-
         public string GetTitle()
         {
             return title;
         }
 
+        public double CalculateMoviePrice(int daysRented)
+        {
+            return (daysRented > 2) ? 2 + (daysRented - 2) * 1.5 : 2;
+        }
     }
 }

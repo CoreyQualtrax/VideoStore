@@ -33,7 +33,7 @@ namespace VideoStore
 
             foreach (var rental in rentals)
             {
-                double thisAmount = rental.CalculatePrice();
+                double thisAmount = rental.CalculateRentalPrice();
                 frequentRenterPoints += rental.CalculateFrequentRenterPoints();
                 result.Append($"\t{rental.GetMovie().GetTitle()}");
                 result.Append($"\t{thisAmount}\n");

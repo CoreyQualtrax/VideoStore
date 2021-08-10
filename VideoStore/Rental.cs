@@ -25,7 +25,6 @@
         {
             double thisAmount = 0;
 
-            // determines the amount for each line
             switch (movie.GetPriceCode())
             {
                 case Movie.REGULAR:

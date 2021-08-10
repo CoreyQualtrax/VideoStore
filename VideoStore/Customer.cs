@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace VideoStore
 {
@@ -27,22 +28,22 @@ namespace VideoStore
         {
             double totalAmount = 0;
             int frequentRenterPoints = 0;
-            String result = "Rental Record for " + GetName() + "\n";
+            StringBuilder result = new StringBuilder();
+            result.Append($"Rental Record for {GetName()}\n");
 
             foreach (var rental in rentals)
             {
                 double thisAmount = rental.CalculatePrice();
-
                 frequentRenterPoints += rental.CalculateFrequentRenterPoints();
-
-                result += "\t" + rental.GetMovie().GetTitle() + "\t"
-                                    + thisAmount + "\n";
+                result.Append($"\t{rental.GetMovie().GetTitle()}");
+                result.Append($"\t{thisAmount}\n");
+     
                 totalAmount += thisAmount;
             }
 
-            result += "You owed " + totalAmount + "\n";
-            result += "You earned " + frequentRenterPoints + " frequent renter points\n";
-            return result;
+            result.Append($"You owed {totalAmount}\n");
+            result.Append($"You earned {frequentRenterPoints} frequent renter points\n");
+            return result.ToString();
         }
     }
 }

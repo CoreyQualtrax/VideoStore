@@ -12,8 +12,7 @@ namespace VideoStoreTests.Movies
     public class RegularMovieTests
     {
         RegularMovie movie;
-        [TestInitialize]
-        public void SetUp()
+        public RegularMovieTests()
         {
             movie = new RegularMovie("A Regular Movie", 3);
         }
@@ -35,6 +34,5 @@ namespace VideoStoreTests.Movies
         {
             Assert.AreEqual(movie.CalculateMoviePrice(3), 3.5);
         }
-
     }
 }

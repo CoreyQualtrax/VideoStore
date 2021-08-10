@@ -12,8 +12,7 @@ namespace VideoStoreTests.Movies
     public class ChildrensMovieTests
     {
         ChildrensMovie movie;
-        [TestInitialize]
-        public void SetUp()
+        public ChildrensMovieTests()
         {
             movie = new ChildrensMovie("Terminator 2", 3);
         }

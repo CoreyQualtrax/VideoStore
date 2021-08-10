@@ -12,8 +12,7 @@ namespace VideoStoreTests.Movies
     public class NewReleaseMovieTests
     {
         NewReleaseMovie movie;
-        [TestInitialize]
-        public void SetUp()
+        public NewReleaseMovieTests()
         {
             movie = new NewReleaseMovie("Generic Super Hero Movie 3", 3);
         }

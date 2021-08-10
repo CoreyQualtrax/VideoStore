@@ -43,7 +43,6 @@ namespace VideoStoreTests
             Assert.AreEqual("Rental Record for Fred\n\tThe Tigger Movie\t3\nYou owed 3\nYou earned 1 frequent renter points\n", customer.Statement());
         }
 
-
         [TestMethod]
         public void TestMultipleRegularStatement()
         {
